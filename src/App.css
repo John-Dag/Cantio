@@ -1,0 +1,7 @@
+body {
+    background-color: grey;
+}
+
+.container-fluid {
+    padding: 0px !important;
+}

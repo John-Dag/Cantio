@@ -1,0 +1,206 @@
+.now-playing-name {
+  font-size: 1.5em;
+  margin-bottom: 0.2em;
+  font-family: cursive;
+  text-align: center;
+}
+
+.now-playing-album-art {
+  text-align: center;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+}
+
+body {
+  background-color: grey;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+.now-playing-album-art img {
+  width: 250px;
+  border: solid 20px teal;
+}
+
+.now-playing-album-art {
+  background-color: black;
+  color: white;
+  margin-left: 10%;
+  overflow-wrap: break-word;
+  max-width: 250px;
+}
+
+.top-artists {
+  color: white;
+  font-weight: 300;
+  background-color: black;
+  width: 250px;
+  border: solid 20px black;
+  display: inline-block;
+  max-width: 250px;
+  margin: 20px;
+}
+
+.top-artists-wrapper {
+  text-align: center;
+}
+
+.top-artists-section {
+  background-color: teal;
+  padding-top: 20px;
+}
+
+.top-artists-wrapper h1 {
+  text-align: left;
+  margin-left: 5%;
+  font-weight: 800;
+  color: white;
+}
+
+.recently-played {
+  color: white;
+  font-weight: 300;
+  background-color: black;
+  width: 250px;
+  border: solid 20px black;
+  display: inline-block;
+  max-width: 250px;
+  margin: 20px;
+}
+
+.recently-played-wrapper {
+  text-align: center;
+}
+
+.recently-played-wrapper h1 {
+  text-align: left;
+  margin-left: 5%;
+  font-weight: 800;
+  color: white;
+}
+
+.recently-played-section {
+  background-color: rgba(55, 24, 23, 1);
+  padding-top: 20px;
+}
+
+.top-tracks {
+  color: white;
+  font-weight: 300;
+  background-color: black;
+  width: 250px;
+  border: solid 20px black;
+  display: inline-block;
+  max-width: 250px;
+  margin: 20px;
+}
+
+.top-tracks-wrapper h1 {
+  text-align: left;
+  margin-left: 5%;
+  font-weight: 800;
+  color: white;
+}
+
+.top-tracks-wrapper {
+  text-align: center;
+}
+
+.top-tracks-section {
+  background-color: rgba(88, 88, 117, 1);
+  padding-top: 20px;
+}
+
+.profile-wrapper {
+  text-align: center;
+  margin-top: 50px;
+  display: inline-block;
+}
+
+.profile-section {
+  background-color: black;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.profile {
+  background-color: black;
+  color: white;
+  font-weight: 500;
+  width: 300px;
+}
+
+.profile a {
+  text-decoration: none;
+  color: white;
+}
+
+.profile a:hover {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.profile-card-body li {
+  background-color: teal;
+}
+
+.collage {
+  color: white;
+  background-color: black;
+  width: 400px;
+  border: solid 20px black;
+  display: inline-block;
+  max-width: 150px;
+  margin: 20px;
+}
+
+.collage-wrapper {
+  text-align: center;
+}
+
+.collage-section {
+  background-color: rgb(52, 160, 151);
+  padding-top: 20px;
+}
+
+.tracks-by-decade {
+  color: white;
+  font-weight: 300;
+  background-color: black;
+  width: 250px;
+  border: solid 20px black;
+  display: inline-block;
+  max-width: 250px;
+  margin: 20px;
+}
+
+.tracks-by-decade-wrapper {
+  text-align: center;
+}
+
+.tracks-by-decade-wrapper h1 {
+  text-align: left;
+  margin-left: 5%;
+  font-weight: 800;
+  color: white;
+  font-size: 2cm;
+}
+
+.tracks-by-decade-section {
+  background-color: rgb(20, 69, 97);
+  padding-top: 20px;
+}
+
+.login-button {
+  text-align: center;
+  margin-top: 50px;
+}
