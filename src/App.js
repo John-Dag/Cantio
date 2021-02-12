@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter, Route, Link, Switch } from "react-router-dom";
 import Draggable from 'react-draggable';
 import { get } from './utils/api';
 import "./App.css";
@@ -23,7 +23,9 @@ const scopes = [
     "user-read-recently-played",
 ];
 
-const requestHref = `${process.env.REACT_APP_AUTHORIZE_URL}?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URL}` +
+const redirect = `${process.env.REACT_APP_REDIRECT_URL}`;
+const encodedRedirect = encodeURIComponent(redirect);
+const requestHref = `${process.env.REACT_APP_AUTHORIZE_URL}?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=` + encodedRedirect +
                     `&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`;
 
 class App extends Component {
@@ -186,7 +188,7 @@ class App extends Component {
         }
         
         return (
-            <Router>
+            <HashRouter basename={process.env.PUBLIC_URL}>
                 <div className="container-fluid">
                     <nav className="navbar navbar-expand-lg navbar-inner navbar-dark bg-dark">
                         <Link to="/" className="navbar-brand">Cantio</Link>
@@ -220,44 +222,46 @@ class App extends Component {
                             {player}
                         </div>
                     </Draggable>
-                    <Route path='/redirect' component={Redirect} />
-                    <Route path="/toptracks" 
-                                 render={(props) => (
-                                    <TopTracks
-                                    isValidSession={this.state.isValidSession} topTracks={this.state.topTracks} 
-                                    {...props} />
-                                 )}
-                    />
-                    <Route path="/topartists" 
-                                 render={(props) => (
-                                    <TopArtists
-                                    isValidSession={this.state.isValidSession} topArtists={this.state.topArtists} 
-                                    {...props} />
-                                 )}
-                    />
-                    <Route path="/recentlyplayed" 
-                                 render={(props) => (
-                                    <RecentlyPlayed
-                                    isValidSession={this.state.isValidSession} recentlyPlayed={this.state.recentlyPlayed} 
-                                    {...props} />
-                                 )}
-                    />
-                    <Route path="/tracksbydecade"
-                                 render={(props) => (
-                                    <TracksByDecade
-                                    isValidSession={this.state.isValidSession} topTracks={this.state.topTracks}
-                                    {...props} />
-                                 )}
-                    />
-                    <Route path="/collage"
-                                 render={(props) => (
-                                     <Collage
-                                     isValidSession={this.state.isValidSession} topTracks={this.state.topTracks} topArtists={this.state.topArtists}
-                                     {...props} />
-                                 )}
-                    />
+                    <Switch>
+                        <Route path='/:access_token(access_token=.*)' component={Redirect} />
+                        <Route path="/toptracks" 
+                                    render={(props) => (
+                                        <TopTracks
+                                        isValidSession={this.state.isValidSession} topTracks={this.state.topTracks} 
+                                        {...props} />
+                                    )}
+                        />
+                        <Route path="/topartists" 
+                                    render={(props) => (
+                                        <TopArtists
+                                        isValidSession={this.state.isValidSession} topArtists={this.state.topArtists} 
+                                        {...props} />
+                                    )}
+                        />
+                        <Route path="/recentlyplayed" 
+                                    render={(props) => (
+                                        <RecentlyPlayed
+                                        isValidSession={this.state.isValidSession} recentlyPlayed={this.state.recentlyPlayed} 
+                                        {...props} />
+                                    )}
+                        />
+                        <Route path="/tracksbydecade"
+                                    render={(props) => (
+                                        <TracksByDecade
+                                        isValidSession={this.state.isValidSession} topTracks={this.state.topTracks}
+                                        {...props} />
+                                    )}
+                        />
+                        <Route path="/collage"
+                                    render={(props) => (
+                                        <Collage
+                                        isValidSession={this.state.isValidSession} topTracks={this.state.topTracks} topArtists={this.state.topArtists}
+                                        {...props} />
+                                    )}
+                        />
+                    </Switch>
                 </div>
-            </Router>
+            </HashRouter>
         );
     }
 }

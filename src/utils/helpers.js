@@ -4,17 +4,17 @@ export const SET_ALBUMS = 'SET_ALBUMS';
 export const ADD_ALBUMS = 'ADD_ALBUMS';
 export const SET_ARTISTS = 'SET_ARTISTS';
 
+//Function from the Spotify implicit grant examples.
 export const getParamValues = (url) => {
-    return url
-        .slice(1)
-        .split('&')
-        .reduce((prev, curr) => {
-            const [title, value] = curr.split('=');
-            prev[title] = value;
-            window.location.hash = "";
-            
-            return prev;
-        }, {});
+    var hashParams = {};
+    var e, r = /([^&;=]+)=?([^&;]*)/g,
+        q = window.location.hash.substring(2);
+
+    while ( e = r.exec(q)) {
+       hashParams[e[1]] = decodeURIComponent(e[2]);
+    }
+
+    return hashParams;
 };
 
 export const setAuthHeader = () => {
