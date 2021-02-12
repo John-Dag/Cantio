@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Cantio/static/css/main.8de1883e.chunk.css",
-    "main.js": "/Cantio/static/js/main.1440894f.chunk.js",
-    "main.js.map": "/Cantio/static/js/main.1440894f.chunk.js.map",
+    "main.js": "/Cantio/static/js/main.1ec27e63.chunk.js",
+    "main.js.map": "/Cantio/static/js/main.1ec27e63.chunk.js.map",
     "runtime-main.js": "/Cantio/static/js/runtime-main.d8993aa5.js",
     "runtime-main.js.map": "/Cantio/static/js/runtime-main.d8993aa5.js.map",
     "static/css/2.20aa2d7b.chunk.css": "/Cantio/static/css/2.20aa2d7b.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.20aa2d7b.chunk.css",
     "static/js/2.a56786aa.chunk.js",
     "static/css/main.8de1883e.chunk.css",
-    "static/js/main.1440894f.chunk.js"
+    "static/js/main.1ec27e63.chunk.js"
   ]
 }
