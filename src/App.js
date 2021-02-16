@@ -7,7 +7,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.min.js';
 
-import Redirect from "./components/redirect.component";
+import RedirectMain from "./components/redirect.component";
 import Player from "./components/player.component";
 import TopArtists from "./components/topartists.component";
 import TopTracks from "./components/toptracks.component";
@@ -15,6 +15,7 @@ import Profile from "./components/profile.component";
 import RecentlyPlayed from "./components/recentlyplayed.component";
 import TracksByDecade from "./components/tracksbydecade.component";
 import Collage from "./components/collage.component";
+import Login from "./components/login.component";
 
 const scopes = [
     "user-read-currently-playing",
@@ -170,7 +171,7 @@ class App extends Component {
 
         loginButton = 
         <a href={requestHref}>
-            <button type="button" class="btn btn-primary btn-success navbar-btn">Login to Spotify</button>
+            <button type="button" class="btn btn-primary btn-success navbar-btn">Login</button>
         </a>
 
         if (this.state.isValidSession) {
@@ -223,7 +224,9 @@ class App extends Component {
                         </div>
                     </Draggable>
                     <Switch>
-                        <Route path='/:access_token(access_token=.*)' component={Redirect} />
+                        <Route exact path="/" component={Login} />
+                        <Route path="/login" component={Login} />
+                        <Route path="/:access_token(access_token=.*)" component={RedirectMain} />
                         <Route path="/toptracks" 
                                     render={(props) => (
                                         <TopTracks
