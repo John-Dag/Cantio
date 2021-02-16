@@ -1,3 +1,13 @@
+# Cantio
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" height="140" width="210">
+
+Features visual representations of your Spotify listening habits. A moveable player keeps track of the music you're currently playing. Built with React, Bootstrap, and Axios.
+
+[Hosted on GitHub Pages](https://john-dag.github.io/Cantio/)
+
+<img src="https://img.shields.io/github/stars/john-dag/Cantio?style=social">
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
